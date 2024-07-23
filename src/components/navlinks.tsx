@@ -13,10 +13,10 @@ import { WrenchScrewdriverIcon } from "@heroicons/react/16/solid";
 
 const links = [
   { name: "Home", href: "/dashboard", icon: HomeIcon },
-  { name: "Bay Selection", href: "/bay-selection", icon: SwatchIcon },
-  { name: "Live", href: "/live-video", icon: VideoCameraIcon },
-  { name: "Logs", href: "/logs-page", icon: CommandLineIcon },
-  { name: "Settings", href: "/settings", icon: WrenchScrewdriverIcon },
+  { name: "Bay Selection", href: "/dashboard/bay-selection", icon: SwatchIcon },
+  { name: "Live", href: "/dashboard/live-video", icon: VideoCameraIcon },
+  { name: "Logs", href: "/dashboard/logs-page", icon: CommandLineIcon },
+  { name: "Settings", href: "/dashboard/settings", icon: WrenchScrewdriverIcon },
 ];
 
 const NavLinks: React.FC = () => {

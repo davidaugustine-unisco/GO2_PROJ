@@ -1,7 +1,9 @@
-export default async function Page() {
-	return (
-	<main>
-		<h1></h1>			
-	</main>
-)
-}
+const Dashboard: React.FC = () => {
+  return (
+    <main>
+      <p>Dashboard Page</p>
+    </main>
+  );
+};
+
+export default Dashboard;
