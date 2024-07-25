@@ -44,6 +44,8 @@ const ChartComponent: React.FC<ChartProps> = ({ apiUrl, chartTitle }) => {
         label: "",
         data: [] as number[],
         fill: false,
+        borderColor: "rgb(0, 0, 0 )",
+        backgroundColor: "#c0c0c0",
         tension: 0.1,
       },
     ],
@@ -63,7 +65,8 @@ const ChartComponent: React.FC<ChartProps> = ({ apiUrl, chartTitle }) => {
               label: chartTitle,
               data: values,
               fill: false,
-              borderColor: "rgb(75, 192, 192, 1)",
+              borderColor: "#4166f5",
+              backgroundColor: "#c0c0c0",
               tension: 0.1,
             },
           ],
@@ -75,7 +78,7 @@ const ChartComponent: React.FC<ChartProps> = ({ apiUrl, chartTitle }) => {
     fetchData();
   }, [apiUrl, chartTitle]);
   return (
-    <div style={{ width: "100%", height: "100%" }}>
+    <div>
       <Line
         data={{
           labels: chartData.labels,
@@ -83,6 +86,28 @@ const ChartComponent: React.FC<ChartProps> = ({ apiUrl, chartTitle }) => {
         }}
         options={{
           responsive: true,
+          transitions: {
+            show: {
+              animations: {
+                x: {
+                  from: 0,
+                },
+                y: {
+                  from: 0,
+                },
+              },
+            },
+            hide: {
+              animations: {
+                x: {
+                  to: 0,
+                },
+                y: {
+                  to: 0,
+                },
+              },
+            },
+          },
           plugins: {
             legend: {
               position: "bottom",
