@@ -45,7 +45,6 @@ const ChartComponent: React.FC<ChartProps> = ({ apiUrl, chartTitle }) => {
         data: [] as number[],
         fill: false,
         borderColor: "rgb(0, 0, 0 )",
-        backgroundColor: "#c0c0c0",
         tension: 0.1,
       },
     ],
@@ -66,7 +65,6 @@ const ChartComponent: React.FC<ChartProps> = ({ apiUrl, chartTitle }) => {
               data: values,
               fill: false,
               borderColor: "#4166f5",
-              backgroundColor: "#c0c0c0",
               tension: 0.1,
             },
           ],
@@ -85,15 +83,17 @@ const ChartComponent: React.FC<ChartProps> = ({ apiUrl, chartTitle }) => {
           datasets: chartData.datasets,
         }}
         options={{
+          interaction: {
+            mode: "index",
+          },
           responsive: true,
           transitions: {
             show: {
               animations: {
-                x: {
-                  from: 0,
-                },
-                y: {
-                  from: 0,
+                tension: {
+                  easing: "easeInQuart",
+                  from: 1,
+                  to: 0,
                 },
               },
             },
